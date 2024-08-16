@@ -1,0 +1,24 @@
+{
+	"packageManager": "yarn@4.4.0",
+	"type": "module",
+	"scripts": {
+		"start": "tsx src/index.ts"
+	},
+	"dependencies": {
+		"@sapphire/eslint-config": "^5.0.5",
+		"@sapphire/fetch": "patch:@sapphire/fetch@npm%3A3.0.2#~/.yarn/patches/@sapphire-fetch-npm-3.0.2-33ca2dd534.patch",
+		"@sapphire/prettier-config": "^2.0.0",
+		"@sapphire/ts-config": "^5.0.1",
+		"eslint": "^9.9.0",
+		"msw": "^2.3.5",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.4"
+	},
+	"prettier": "@sapphire/prettier-config",
+	"eslintConfig": {
+		"extends": "@sapphire/eslint-config"
+	},
+	"devDependencies": {
+		"tsx": "^4.17.0"
+	}
+}

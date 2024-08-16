@@ -1,0 +1,28 @@
+diff --git a/dist/esm/index.mjs b/dist/esm/index.mjs
+index 7ce3ca8a091ca09595a8b2244aff944ea8b8bac1..6c93c6bb800a51c7918b28742e2e3b72271f0c59 100644
+--- a/dist/esm/index.mjs
++++ b/dist/esm/index.mjs
+@@ -120,13 +120,22 @@ async function fetch(url, options, type) {
+     type = "json" /* JSON */;
+   }
+   let { body } = options;
++  debugger;
++  // Check the body in the debugger here
+   if (body && typeof body === "object") {
+     body = JSON.stringify(body);
+   }
++  // Check the body in the debugger here, it has been nuked!
++  debugger;
+   const stringUrl = String(url);
+   const result = await globalThis.fetch(stringUrl, { ...options, body });
+   if (!result.ok)
+-    throw new QueryError(stringUrl, result.status, result, await result.clone().text());
++    throw new QueryError(
++      stringUrl,
++      result.status,
++      result,
++      await result.clone().text()
++    );
+   switch (type) {
+     case "result" /* Result */:
+       return result;
